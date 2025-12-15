@@ -1,9 +1,3 @@
-Below is a **clean, revised `README.md` focused ONLY on ACO**, with all BCO references removed and wording aligned with what you actually implemented and reported.
-
-You can replace your current README with this version directly.
-
----
-
 # Parallel Ant Colony Optimization (ACO) for PID Controller Tuning
 
 ## Overview
