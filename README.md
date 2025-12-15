@@ -30,31 +30,31 @@ Each plant is controlled using a discrete-time PID controller and evaluated usin
 
 ```
 .
-├── src/
-│   ├── pid_simulator.{h,cpp}     # PID controller + plant simulation
-│   ├── utils.{h,cpp}             # Random utilities and helpers
-│   ├── aco.{h,cpp}               # Serial ACO implementation
-│   ├── aco_parallel.{h,cpp}      # Parallel ACO (OpenMP)
+├── aco.cpp                      # Serial ACO implementation
+├── aco.h                        # ACO data structures and function declarations
+├── aco_parallel.cpp             # Parallel ACO implementation (OpenMP)
+├── aco_parallel.h               # Parallel ACO interface
+├── main_serial.cpp              # Driver for serial ACO execution
+├── main_parallel.cpp            # Driver for parallel ACO execution
 │
-├── scripts/
-│   └── run_aco.sh                # Automates ACO thread sweep
+├── pid_simulator.cpp            # Discrete-time PID + plant simulation
+├── pid_simulator.h              # PID simulator interface
+├── utils.cpp                    # Utility functions (random numbers, helpers)
+├── utils.h                      # Utility function declarations
 │
-├── data/
-│   └── logs/
-│       ├── aco_parallel_results.csv
-│       └── aco_best.csv
+├── run.sh                       # Script to run parallel ACO experiments
 │
-├── figures/
-│   └── aco_parallel/
-│       ├── aco_pid_comparison_G1.pdf
-│       ├── aco_pid_comparison_G2.pdf
-│       ├── aco_pid_comparison_G3.pdf
-│       └── aco_pid_all.pdf
+├── aco_parallel_results.csv     # Execution-time results vs thread count
+├── aco_best.csv                 # Best PID gains and MSE for each run
+├── aco_step_metrics.csv         # Step-response performance metrics
 │
-├── analysis/
-│   └── plot_results.py           # Python analysis & plotting
+├── plots/                       # Generated figures (PDF)
+│   └── aco_pid_all.pdf          # Combined PID response comparison
 │
-└── README.md
+├── plot_parallel.ipynb          # Jupyter notebook for analysis and plotting
+│
+└── README.md                    # Project documentation
+
 ```
 
 ---
